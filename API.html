@@ -21,12 +21,61 @@
   
 </head>
 <body>
-
-<center>
+<div align="center">
 <br>
-<div id="NomDep">
-</div>	
-</center>	
+
+<div class="ui placeholder segment">
+  <div class="ui two column stackable center aligned grid">
+    <div class="middle aligned row">
+      <div class="column">
+        <div class="ui icon header">
+		
+		
+		<h1>Ville avec fleuve</h1>
+		<br><br><br>
+		
+		<div id="NomDep">
+		</div>
+           
+        </div>
+        <div class="field">
+          <div class="ui search">
+            <div class="results"></div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui icon header">
+		
+          <h1>Code commun</h1>
+		  <br><br><br>
+		
+		<div id="NumCom">
+		</div>
+        </div>
+      </div>
+	  
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div align="center">
+<footer>
+<br><br><br><br><br><br>
+<p>© 2020 API</p>   
+<div class="ui list">
+    <div class="content">
+      <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><a href="https://api.gouv.fr/api/api_hubeau_temperature_rivieres#api-description"><h4>API Gouv Hubeau</h4></a></font></font>
+    </div>
+</div>
+<br>
+</footer>
+<div>
+	
+
 
 
 	<script>
@@ -50,10 +99,7 @@
 			var xdrRequest =  getXDomainRequest();
 			xdrRequest.open("GET", link);
 			
-			xdrRequest.onload = function() {
 			
-			
-			}
 			
 			
 			xdrRequest.onload = function() {
@@ -64,17 +110,27 @@
                 h3Element.textContent =departe.data[0].libelle_station;
                 divNom.appendChild(h3Element);	
 				
+				
+				
+				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
                 var h3Element = document.createElement('h3');
                 h3Element.textContent =departe.data[1].libelle_station;
                 divNom.appendChild(h3Element);
 				
+				
+				
+				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
                 var h3Element = document.createElement('h3');
                 h3Element.textContent =departe.data[2].libelle_station;
-                divNom.appendChild(h3Element);	
+                divNom.appendChild(h3Element);
+				
+				
+				
+				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
@@ -82,11 +138,17 @@
                 h3Element.textContent =departe.data[3].libelle_station;
                 divNom.appendChild(h3Element);
 				
+				
+				
+				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
                 var h3Element = document.createElement('h3');
                 h3Element.textContent =departe.data[4].libelle_station;
-                divNom.appendChild(h3Element);	
+                divNom.appendChild(h3Element);
+	
+
+				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
@@ -94,17 +156,103 @@
                 h3Element.textContent =departe.data[5].libelle_station;
                 divNom.appendChild(h3Element);
 				
+				
+				
+				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
                 var h3Element = document.createElement('h3');
                 h3Element.textContent =departe.data[6].libelle_station;
                 divNom.appendChild(h3Element);
 				
+				
 			}
 			xdrRequest.send();
+			
+			
 		}
 		departement();
 		
+		
+		function commun(){
+			
+			var link = "https://hubeau.eaufrance.fr/api/v1/temperature/station?code_departement=37&pretty";
+			var xdrRequest =  getXDomainRequest();
+			xdrRequest.open("GET", link);
+			
+			
+			
+			
+			xdrRequest.onload = function() {	
+				
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[0].code_commune;
+                divNum.appendChild(h3Element);
+				
+				
+				
+				
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[1].code_commune;
+                divNum.appendChild(h3Element);
+				
+				
+				
+				
+
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[2].code_commune;
+                divNum.appendChild(h3Element);				
+				
+				
+				
+				
+				
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[3].code_commune;
+                divNum.appendChild(h3Element);
+				
+				
+				
+
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[4].code_commune;
+                divNum.appendChild(h3Element);	
+
+				
+				
+				
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[5].code_commune;
+                divNum.appendChild(h3Element);
+				
+				
+				
+				
+				var divNum = document.getElementById("NumCom");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[6].code_commune;
+                divNum.appendChild(h3Element);
+				
+			}
+			xdrRequest.send();
+		
+		}
+		
+		commun();
 	</script>
 </body>
 </html>
