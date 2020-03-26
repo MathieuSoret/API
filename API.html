@@ -22,7 +22,7 @@
 
 <div id="demo">
 		<h1>Département : </h1>
-		<button class="primary basic ui button" type="button"onclick="departement()">Changer département :</button>
+		<button class="primary basic ui button" type="button" onclick="departement()" >Changer département :</button>
 		<input name="recherche" id="recherche"></input>
 		<div id="NomDepa"></div>
 	</div>
@@ -56,15 +56,18 @@
 
 	<script>
 	
+		
+	
 		function loadDep()
 		{
-			var pelem = document.createElement('p');
+			var pelem = document.createElement('h4');
 			pelem.innerText = "depa";
 			document.getElementById("NomDep").appendChild(pelem);
+			
 		}
 		
 		
-				
+		
 		function getXDomainRequest() {
 			var xdr = null;
 			if (window.XDomainRequest) {
@@ -76,6 +79,8 @@
 			}	
 			return xdr;	
 		}
+		
+		
 		
 		function departement(){
 			
@@ -89,35 +94,18 @@
 			
 			
 			
-			
+			xdrRequest.onload = function () {
 				
-			xdrRequest.onload = function() {
-			
 				
-				var asup = document.getElementById("depa");
-				if(asup){asup.parentNode.removeChild(asup);}
-
+				
+				
+				
                 var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[0].libelle_station;
-                divNom.appendChild(h3Element);	
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[0].libelle_station;
+                divNom.appendChild(h4Element);	
 				
-				
-				var divNom = document.getElementById("NomDep");
-                var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[1].libelle_station;
-                divNom.appendChild(h3Element);
-				
-				
-				
-				
-				var divNom = document.getElementById("NomDep");
-                var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[2].libelle_station;
-                divNom.appendChild(h3Element);
 				
 				
 				
@@ -125,48 +113,73 @@
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[3].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[1].libelle_station;
+                divNom.appendChild(h4Element);
 				
 				
 				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[4].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[2].libelle_station;
+                divNom.appendChild(h4Element);
+				
+				
+				
+				
+				
+				var divNom = document.getElementById("NomDep");
+                var departe = JSON.parse(this.responseText);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[3].libelle_station;
+                divNom.appendChild(h4Element);
+				
+				
+				
+				
+				var divNom = document.getElementById("NomDep");
+                var departe = JSON.parse(this.responseText);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[4].libelle_station;
+                divNom.appendChild(h4Element);
 	
 
 				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[5].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[5].libelle_station;
+                divNom.appendChild(h4Element);
 				
 				
 				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[6].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[6].libelle_station;
+                divNom.appendChild(h4Element);
+				
+				
+				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[7].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[7].libelle_station;
+                divNom.appendChild(h4Element);
+				
+				
+				
 				
 				var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
-                var h3Element = document.createElement('h3');
-                h3Element.textContent =departe.data[8].libelle_station;
-                divNom.appendChild(h3Element);
+                var h4Element = document.createElement('h4');
+                h4Element.textContent =departe.data[8].libelle_station;
+                divNom.appendChild(h4Element);
 				
 				
 				
@@ -180,5 +193,6 @@
 		
 		
 	</script>
+	
 </body>
 </html>
