@@ -20,6 +20,8 @@
  
 </head>
 
+<!-- Cette ligne permet de mettre le numéro du département que l'on veut -->
+
 <div id="demo">
 		<h1>Département : </h1>
 		<button class="primary basic ui button" type="button" onclick="departement()" >Changer département :</button>
@@ -57,7 +59,7 @@
 	<script>
 	
 		
-	
+
 		function loadDep()
 		{
 			var pelem = document.createElement('h4');
@@ -84,6 +86,7 @@
 		
 		function departement(){
 			
+			<!-- Ses trois lignes permettent de mettre le numéro du département avant le &pretty et ensuite faire la recherche dans l'API -->
 			var link = "https://hubeau.eaufrance.fr/api/v1/temperature/station?code_departement=";
 			link = link.concat(document.getElementById("recherche").value);
 			link = link.concat("&pretty");
@@ -98,7 +101,7 @@
 				
 				
 				
-				
+				<!-- Ses lignes me permettes d'aller chercher les info dans mon API -->
 				
                 var divNom = document.getElementById("NomDep");
                 var departe = JSON.parse(this.responseText);
