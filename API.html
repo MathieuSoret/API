@@ -22,7 +22,7 @@
 
 <div id="demo">
 		<h1>Département : </h1>
-		<button class="primary basic ui button" type="button" onclick="departement()">Changer département :</button>
+		<button class="primary basic ui button" type="button"onclick="departement()">Changer département :</button>
 		<input name="recherche" id="recherche"></input>
 		<div id="NomDepa"></div>
 	</div>
@@ -35,9 +35,8 @@
 
 <h1>Ville avec fleuve</h1>
 <br><br><br>
-		<div id="NomDep">
+<div id="NomDep">
 </div>  
-        
 
 <div align="center">
 <footer>
@@ -61,11 +60,11 @@
 		{
 			var pelem = document.createElement('p');
 			pelem.innerText = "depa";
-			document.getElementById("NomDepa").appendChild(pelem);
+			document.getElementById("NomDep").appendChild(pelem);
 		}
 		
 		
-	
+				
 		function getXDomainRequest() {
 			var xdr = null;
 			if (window.XDomainRequest) {
@@ -94,6 +93,7 @@
 				
 			xdrRequest.onload = function() {
 			
+				
 				var asup = document.getElementById("depa");
 				if(asup){asup.parentNode.removeChild(asup);}
 
@@ -155,6 +155,19 @@
                 var h3Element = document.createElement('h3');
                 h3Element.textContent =departe.data[6].libelle_station;
                 divNom.appendChild(h3Element);
+				
+				var divNom = document.getElementById("NomDep");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[7].libelle_station;
+                divNom.appendChild(h3Element);
+				
+				var divNom = document.getElementById("NomDep");
+                var departe = JSON.parse(this.responseText);
+                var h3Element = document.createElement('h3');
+                h3Element.textContent =departe.data[8].libelle_station;
+                divNom.appendChild(h3Element);
+				
 				
 				
 			}
